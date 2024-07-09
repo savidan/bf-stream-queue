@@ -33,10 +33,11 @@ jobs:
 
       - name: Replace placeholders with secrets
         run: |
-          sed -i 's/<DB_SERVER>/${{ secrets.DB_SERVER }}/g' streamqueue.py
-          sed -i 's/<DB_DATABASE>/${{ secrets.DB_DATABASE }}/g' streamqueue.py
-          sed -i 's/<DB_USERNAME>/${{ secrets.DB_USERNAME }}/g' streamqueue.py
-          sed -i 's/<DB_PASSWORD>/${{ secrets.DB_PASSWORD }}/g' streamqueue.py
+          sed -i 's/<DB_SERVER>/${{ secrets.DB_SERVER }}/g' src/streamqueue.py
+          sed -i 's/<DB_DATABASE>/${{ secrets.DB_DATABASE }}/g' src/streamqueue.py
+          sed -i 's/<DB_USERNAME>/${{ secrets.DB_USERNAME }}/g' src/streamqueue.py
+          sed -i 's/<DB_PASSWORD>/${{ secrets.DB_PASSWORD }}/g' src/streamqueue.py
+          sed -i 's/<API_KEY>/${{ secrets.API_KEY }}/g' src/streamqueue.py
 
       - name: Create the installable
         # Create the exe and capture the path to the resulting file
